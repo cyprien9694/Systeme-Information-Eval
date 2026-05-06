@@ -24,7 +24,7 @@ Chaque état est exposé comme un service autonome appelable via **gRPC**.
 ---
 
 ## 🏗️ Architecture
-
+```bash
 src/
 ├── state.py # Interface abstraite State
 ├── no_token.py # État : sans jeton
@@ -48,7 +48,7 @@ database/
 
 main.py
 README.md
-
+```
 ---
 
 ## ⚙️ Installation
