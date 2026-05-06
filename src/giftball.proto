@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package giftball;
+
+message MachineRequest {
+    int32 stock = 1;
+}
+
+message MachineResponse {
+    string message = 1;
+    int32 stock = 2;
+    string next_state = 3;
+}
+
+service NoTokenService {
+    rpc InsertToken (MachineRequest) returns (MachineResponse);
+    rpc EjectToken (MachineRequest) returns (MachineResponse);
+    rpc TurnCrank (MachineRequest) returns (MachineResponse);
+    rpc Dispense (MachineRequest) returns (MachineResponse);
+}
+
+service OneTokenService {
+    rpc InsertToken (MachineRequest) returns (MachineResponse);
+    rpc EjectToken (MachineRequest) returns (MachineResponse);
+    rpc TurnCrank (MachineRequest) returns (MachineResponse);
+    rpc Dispense (MachineRequest) returns (MachineResponse);
+}
+
+service DispensingService {
+    rpc InsertToken (MachineRequest) returns (MachineResponse);
+    rpc EjectToken (MachineRequest) returns (MachineResponse);
+    rpc TurnCrank (MachineRequest) returns (MachineResponse);
+    rpc Dispense (MachineRequest) returns (MachineResponse);
+}
+
+service DispensingDoubleService {
+    rpc InsertToken (MachineRequest) returns (MachineResponse);
+    rpc EjectToken (MachineRequest) returns (MachineResponse);
+    rpc TurnCrank (MachineRequest) returns (MachineResponse);
+    rpc Dispense (MachineRequest) returns (MachineResponse);
+}
