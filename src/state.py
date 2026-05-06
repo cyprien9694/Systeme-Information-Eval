@@ -1,7 +1,15 @@
-from enum import Enum, auto
+from abc import ABC, abstractmethod
 
-class State(Enum):
-    NO_TOKEN = auto()
-    ONE_TOKEN = auto()
-    DISPENSING = auto()
-    EMPTY = auto()
+class State(ABC):
+
+    @abstractmethod
+    def insert_token(self, machine): pass
+
+    @abstractmethod
+    def eject_token(self, machine): pass
+
+    @abstractmethod
+    def turn_crank(self, machine): pass
+
+    @abstractmethod
+    def dispense(self, machine): pass

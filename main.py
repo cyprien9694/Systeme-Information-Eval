@@ -15,7 +15,7 @@ def main():
     machine.insert_token()
     machine.turn_crank()
 
-    machine.insert_token()  # machine vide
+    machine.insert_token() 
 
 if __name__ == "__main__":
     main()
