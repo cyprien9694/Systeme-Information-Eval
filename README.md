@@ -25,29 +25,26 @@ Chaque état est exposé comme un service autonome appelable via **gRPC**.
 
 ## 🏗️ Architecture
 ```bash
-src/
-├── state.py # Interface abstraite State
-├── no_token.py # État : sans jeton
-├── one_token.py # État : avec jeton
-├── dispensing.py # État : distribution 1 balle
-├── dispensing_double.py # État : distribution 2 balles (20%)
-├── giftball.py # Client / contexte principal gRPC
-├── giftball.proto # Définition des services gRPC
-├── generated/ # Stubs générés par protoc
-└── servers/
-├── no_token_server.py
-├── one_token_server.py
-├── dispensing_server.py
-└── dispensing_double_server.py
-
-test/
-└── test_giftball.py
-
-database/
-└── schema.sql
-
-main.py
-README.md
+├── src/
+│   ├── state.py                  # Interface abstraite State
+│   ├── no_token.py               # État : sans jeton
+│   ├── one_token.py              # État : avec jeton
+│   ├── dispensing.py             # État : distribution 1 balle
+│   ├── dispensing_double.py      # État : distribution 2 balles (20%)
+│   ├── giftball.py               # Contexte / client gRPC
+│   ├── giftball.proto            # Définition des services gRPC
+│   ├── generated/                # Stubs générés par protoc
+│   └── servers/
+│       ├── no_token_server.py
+│       ├── one_token_server.py
+│       ├── dispensing_server.py
+│       └── dispensing_double_server.py
+├── test/
+│   └── test_giftball.py
+├── database/
+│   └── schema.sql
+├── main.py
+└── README.md
 ```
 ---
 
