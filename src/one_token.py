@@ -1,3 +1,4 @@
+import random
 from src.state import State
 
 class OneTokenState(State):
@@ -12,8 +13,12 @@ class OneTokenState(State):
 
     def turn_crank(self, machine):
         print("Manivelle tournée")
-        from src.dispensing import DispensingState
-        machine.set_state(DispensingState())
+        if random.random() < 0.20:
+            from src.dispensing_double import DispensingDoubleState
+            machine.set_state(DispensingDoubleState())
+        else:
+            from src.dispensing import DispensingState
+            machine.set_state(DispensingState())
         machine.state.dispense(machine)
 
     def dispense(self, machine):
