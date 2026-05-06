@@ -24,6 +24,7 @@ Chaque état est exposé comme un service autonome appelable via **gRPC**.
 ---
 
 ## 🏗️ Architecture
+
 ├── src/
 │   ├── state.py                  # Interface abstraite State
 │   ├── no_token.py               # État : sans jeton
